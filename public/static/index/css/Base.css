@@ -1,0 +1,81 @@
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+body{
+	font:12px/1.7 Microsoft YaHei,Helvetica,sans-serif;
+	color:#333;
+	word-break:break-all
+}
+a{
+	text-decoration: none;
+	outline:none;
+}
+.article img{
+	max-width:100%;
+}
+.article .content li{
+	list-style-position:inside;
+}
+.container{
+	margin:0 auto;
+}
+.clear{
+	clear:both;
+}
+.Tc{
+	text-align:center;
+}
+.Tl{
+	text-align:left;
+}
+.Tr{
+	text-align:right;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.clearfix{
+	clear:both;
+}
+.white{
+	color:white;
+}
+.Bgw{
+	background:white;
+}
+.mt10{
+	margin:10px auto;
+}
+.mb10{
+	margin-bottom:10px auto 0 auto;
+}
+.mt100{
+	margin-top:100px;
+}
+.mt200{
+	margin-top:200px;
+}
+.mb40{
+	margin-bottom:40px;
+}
+.circle{
+	border-radius:50%;
+}
+.f20{
+	font-size:20px;
+}
+.f32{
+	font-size:32px;
+}
+h1 .small,
+h2 .small,
+h3 .small,
+h4 .small,
+h5 .small,
+h6 .small{
+	font-size:0.7em;
+	padding-left:5px;
+	font-weight:normal;
+	color:#666;
+}

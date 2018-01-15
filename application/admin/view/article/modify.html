@@ -1,0 +1,57 @@
+
+	<div class="container-fluid content">
+		<div class="article">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					修改文章
+				</div>
+				<div class="panel-body">
+					<form id="modify_article" method="post" enctype="multipart/form-data">
+					  <input type="hidden" id="articleId" value="{$article.id}">
+					  <div class="form-group">
+					    <label for="title">标题</label>
+					    <input type="text" name="title" class="form-control" id="title" value="{$article.title}" minlength="2" maxlength="15" required>
+					  </div>
+					  <div class="form-group">
+					   <label for="type">分类</label>
+					   <select class="form-control" name="type" id="type">
+					    {switch name=$article.type}
+						    {case value="1"}
+								<option value="1" selected>CSS3</option>
+							    <option value="2">HTML5</option>
+							    <option value="3">Javascript</option>
+						    {/case}
+						    {case value="2"}
+								<option value="1">CSS3</option>
+							    <option value="2" selected>HTML5</option>
+							    <option value="3">Javascript</option>
+						    {/case}
+						    {default /}
+						    	<option value="1">CSS3</option>
+							    <option value="2">HTML5</option>
+							    <option value="3" selected>Javascript</option>
+						{/switch}
+					   </select>
+					  </div>
+					  <div class="form-group">
+					   <label for="nickname">简介</label>
+					    <textarea class="form-control" name="intro" rows="3" minlength="10" maxlength="80" required>{$article.intro}</textarea>
+					  </div>
+					  <div class="article form-group">
+					    <label for="content">内容</label>
+					    <script id="article" type="text/plain" style="width:100%;height:800px;">{$article.content}</script>
+					  </div>
+					  <button id="modify" class="btn btn-default">修改</button>
+					  <span style="display:none" id="info" class="text-warning"></span>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/static/admin/js/ueditor/ueditor.config.js"></script>
+    <script src="/static/admin/js/ueditor/ueditor.all.min.js"></script>
+	<script>
+		$(function(){
+			UE.getEditor('article');
+		})
+	</script>

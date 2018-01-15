@@ -1,0 +1,56 @@
+
+	<div class="container-fluid content">
+		<div class="row intor">
+			<div class="col-md-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading"><h3 class="panel-title">后台介绍</h3></div>
+					<p class="panel-body">
+						于2017年5月9日竣工完毕，历时3个月完成，后台采用bootstrap+thinkphp形式，账号分为主账号和游客账号两个，游客账号权限仅限于浏览无法进行操作。如果有兴趣进行交流或者发现了什么BUG请发送邮件至1845348325@qq.com。写给自己的注意事项：
+						<ol type="1" start="1">
+							<li>今日新增为当天的文章数量。</li>
+							<li>总浏览数为博客网站浏览量。</li>
+							<li>横向幻灯片高度250宽度建议1920。</li>
+							<li>竖向幻灯片高度建议超过1200宽度300。</li>
+							<li>头像上传的文件建议为jpg,虽然其他格式的图片也会被强制转换成jpg。</li>
+							<li>网站文章编辑器使用的是百度的ueditor，音乐功能测试过后发现BUG没办法修复。</li>
+							<li>备份还是很重要的一周备份一次吧。</li>
+						</ol>
+					</p>
+				</div>
+			</div>
+			<div class="data1">
+				<div class="col-md-3">
+					<div class="panel panel-success">
+						<div class="panel-heading text-center">今日新增</div>
+						<p class="panel-body">
+							{$system.today_article}
+						</p>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="panel  panel-warning">
+						<div class="panel-heading text-center">总文章数</div>
+						<p class="panel-body">
+							{$system.article_count}
+						</p>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="panel panel-info">
+						<div class="panel-heading text-center">总日记数</div>
+						<p class="panel-body">
+							{$system.diary_count}
+						</p>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="panel panel-danger">
+						<div class="panel-heading text-center">总浏览数</div>
+						<p class="panel-body">
+							{$system.read_count}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

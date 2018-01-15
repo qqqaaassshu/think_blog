@@ -1,0 +1,44 @@
+body{
+	background:#f9f9f9;
+	font-family: Arial,'Microsoft YaHei';
+}
+a{
+	display:inline-block;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+a:focus{
+	text-decoration: none;
+}
+img{
+	display:block;
+}
+ul{
+	list-style-type: none;
+}
+table{
+	text-align:center;
+}
+textarea{
+	resize:none;
+	overflow-y:auto;
+}
+.panel-heading .panel-title{
+	display:inline-block;
+}
+.form-inline .form-group{
+	margin-right:10px;
+}
+/*验证提示CSS*/
+label.error{
+	margin:0;
+	font-weight:normal;
+}
+textarea.error{
+	background:#ebccd1;
+}
+input.error{
+	background:#ebccd1;
+}

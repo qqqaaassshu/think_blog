@@ -1,0 +1,43 @@
+
+	<div class="container-fluid content">
+		<div class="article">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					新增文章
+				</div>
+				<div class="panel-body">
+					<form id="add_article" method="post" enctype="multipart/form-data">
+					  <div class="form-group">
+					    <label for="title">标题</label>
+					    <input type="text" name="title" class="form-control" id="title" minlength="2" maxlength="15" required>
+					  </div>
+					  <div class="form-group">
+					   <label for="type">分类</label>
+					   <select class="form-control" name="type" id="type">
+						   <option value="1">CSS3</option>
+						   <option value="2">HTML5</option>
+						   <option value="3">Javascript</option>
+					   </select>
+					  </div>
+					  <div class="form-group">
+					   <label for="intro">简介</label>
+					    <textarea class="form-control" id="intro" name="intro" rows="3" minlength="10" maxlength="80" required></textarea>
+					  </div>
+					  <div class="article form-group">
+					    <label for="content">内容</label>
+					    <script id="article" type="text/plain" style="width:100%;height:800px;"></script>
+					  </div>
+					  <button id="modify" class="btn btn-default">发布</button>
+					  <span style="display:none" id="info" class="text-warning"></span>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/static/admin/js/ueditor/ueditor.config.js"></script>
+    <script src="/static/admin/js/ueditor/ueditor.all.min.js"></script>
+	<script>
+		$(function(){
+        	var ue = UE.getEditor('article');
+		})
+	</script>

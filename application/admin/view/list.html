@@ -1,0 +1,26 @@
+<div class="list">
+	<div class="logo">
+		<a href="/admin">
+			<img src="/static/common/images/logo.jpg">
+			<h1>Blog后台管理系统</h1>
+		</a>
+	</div>
+	<ul class="tree">
+		<li class="tree-view"><a href="{:url('flash/index')}">幻灯片修改</a></li>
+		<li class="tree-view"><a class="inactive" href="javascript:;">个人信息修改</a>
+			<ul class="tree-menu">
+				<a href={:url('person/index')}><li>人物信息修改</li></a>
+				<a href={:url('jianli/index')}><li>人物简历修改</li></a>
+			</ul>
+		</li>
+		<li class="tree-view"><a href={:url('diary/index')}>网站日记</a></li>
+		<li class="tree-view"><a class="inactive" href="javascript:;"}>网站文章</a>
+			<ul  class="tree-menu">
+				<a href='/admin/article/1'><li>CSS3</li></a>
+				<a href='/admin/article/2'><li>HTML5</li></a>
+				<a href='/admin/article/3'><li>JavaScript</li></a>
+			</ul>
+		</li>
+		<li class="tree-view"><a href={:url('system/index')}>系统信息</a></li>
+	</ul>
+</div>

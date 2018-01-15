@@ -1,0 +1,89 @@
+
+	<div class="container-fluid content">
+		<div class="flash">
+			<!-- <div class="panel panel-info">
+				<div class="panel-heading">
+					幻灯片
+				</div>
+				<div class="panel-body">
+					<form id="flash-modify" method="post" enctype="multipart/form-data">
+					</form>
+				</div>
+			</div> -->
+			<ul id="Tab" class="nav nav-tabs">
+				<li class="active"><a href="#horizontal" data-toggle="tab" aria-expanded='true'>横向幻灯片</a></li>
+				<li><a href="#vertical " data-toggle="tab">竖向幻灯片</a></li>
+			</ul>
+			<div id="TabContent" class="tab-content">
+				<div class="tab-pane fade in active" id="horizontal">
+					<a href="javascript:;" id="add-Hflash" data-toggle="modal" data-target="#addFlash" class="add-flash btn btn-primary">添加幻灯片</a>
+					<form id="Hflash-modify" method="post">
+						<table id="Hflash-table" class="flash-table table-bordered table-responsive">
+							<thead>
+								<tr>
+									<th width="15%">排序</th>
+									<th width="75%">图片预览</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+									{volist name="Hlist" id="flash"}
+									<tr>
+										<td><input type="hidden" name="id[]" value="{$flash.id}"><input class="form-control" type="text" id="order{$i}" name="order[]" value="{$flash.order}" maxlength="1" required></td>
+										<td><img class="flash-img" src="/static/common/images/upload/flash/{$flash.path}"></td>
+										<td><a class="del-flash" href="javascript:;" title="{$flash.id}">删除</a></td>
+									</tr>
+									{/volist}
+									<tr>
+										<td colspan="3"><button class="btn btn-primary" href="javascript:;">修改</button><span style="display:none" id="info" class="text-warning"></span></td>
+									</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+				<div class="tab-pane fade" id="vertical">
+					<a href="javascript:;" id="add-Vflash" data-toggle="modal" data-target="#addFlash" class="add-flash btn btn-primary">添加幻灯片</a>
+					<form id="Vflash-modify" method="post">
+						<table id="Vflash-table" class="flash-table table-bordered table-responsive">
+							<thead>
+								<tr>
+									<th width="15%">排序</th>
+									<th width="75%">图片预览</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+									{volist name="Vlist" id="flash"}
+									<tr>
+										<td><input type="hidden" name="id[]" value="{$flash.id}"><input class="form-control" type="text" id="order{$i}" name="order[]" value="{$flash.order}" maxlength="1" required></td>
+										<td><img class="flash-img" src="/static/common/images/upload/flash/{$flash.path}"></td>
+										<td><a class="del-flash" href="javascript:;" title="{$flash.id}">删除</a></td>
+									</tr>
+									{/volist}
+									<tr>
+										<td colspan="3"><button class="btn btn-primary" href="javascript:;">修改</button><span style="display:none" id="info2" class="text-warning"></span></td>
+									</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="addFlash" class="modal fade" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">增加幻灯片</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<input id="type" type="hidden" name="type">
+			<input id="upload-flash" name="image" type="file" multiple>
+			<p class="text-danger">Notic:图片采用ajax上传,因此图片超出了10张,上传顺序不会是选择上传的顺序</p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<script src="/static/admin/js/fileinput.min.js"></script>
+	<script src="/static/admin/js/fileinput_locale_zh.js"></script>

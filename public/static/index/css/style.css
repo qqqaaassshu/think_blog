@@ -1,0 +1,478 @@
+﻿body{
+	min-width:1200px;
+}
+/*左侧栏目*/
+.index ul li{
+	list-style-type: none
+}
+.index .container{
+	width:1200px;
+}
+.top{
+	height: 250px;
+	position:relative;
+}
+.top .container{
+	position: relative;
+	height: 250px;
+}
+.top .personInfo{
+	position: absolute;
+	left: 10px;
+	top: 20px;
+	width:400px;
+}
+.left{
+	position:fixed;
+	z-index:999;
+	width:350px;
+	top:0;
+	bottom:0;
+}
+.left .personInfo{
+	width:186px;
+	margin:40px auto;
+	text-align: center;
+}
+.personInfo{
+	margin-top:40px;
+}
+.top .head{
+	float:left;
+}
+.head{
+	width: 150px;
+	border:3px solid white;
+}
+.left .line{
+	height:1px;
+	width:0px;
+	margin:10px auto;
+	background:rgba(255,255,255,0.5);
+}
+.left .personInfo h1{
+	display:none;
+}
+.left #sb-slider{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.top .line{
+	display:inline-block;
+	margin:0 10px;
+	border-left:1px solid rgba(255,255,255,0.5);
+}
+.me{
+	float:left;
+	margin:40px 0 0 30px;
+}
+.personInfo .name{
+	display:none;
+	font-size:32px;
+	color:white;
+	text-shadow:1px 1px 1px gray;
+}
+.me p{
+	display:none;
+	font-size:20px;
+	color:white;
+}
+#banner{
+	width: 100%;
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	z-index:-1;
+}
+#banner li{
+	display:none;
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-size:cover;
+	background-position:right center;
+}
+/*首页导航*/
+.nav{
+	position: absolute;
+	font-size:30px;
+	text-shadow:1px 1px 1px #000;
+	right: 10px;
+	bottom: 10px;
+}
+.nav li {
+	float:left;
+	margin-left:55px;
+}
+.nav li a{
+	color:white;
+}
+/*左侧栏目*/
+.news{
+	float:left;
+	margin-left:20px;
+}
+.list{
+	margin:0 auto 20px auto;
+	width:700px;
+}
+.list li{
+	padding:20px 0;
+	border-bottom:1px dashed #333;
+}
+.title h2{
+	font:normal 24px/1 'Microsoft YaHei';
+	color:#333;
+	transition:color .4s; 
+}
+.title h2:hover{
+	color:#337ab7;
+}
+.text{
+	width:90%;
+	font-size:14px;
+	text-indent:1em;
+	padding:10px 15px;
+	font-family: 'SimSun';
+}
+.type a{
+	color:#333;
+}
+/*右边记录日志*/
+.record{
+	overflow:hidden;
+}
+.r-list{
+	width:250px;
+	margin:0 auto;
+}
+/*日历*/
+.flatpickr-calendar.inline{
+	margin:20px auto;
+}
+/*分类*/
+.slist h2{
+	font:normal 30px/1 'Microsoft YaHei';
+	padding:20px 0 10px 0;
+	border-bottom:1px solid #333;
+	color:#333;
+}
+.slist p{
+	text-indent:2em;
+	width:96%;
+	margin:5px auto;
+	font-family:'SimSun';
+}
+.fenlei dd{
+	font-size:20px;
+}
+/*右边记录日志end*/
+/*文章界面*/
+.article .writings{
+	min-height:1000px;
+	margin-left:350px;
+	padding-bottom:100px;
+	background:#f4f4f4;
+}
+/*面包屑导航*/
+.bread{
+	margin:0 40px 10px 40px;
+	padding:10px 0 0 10px;
+	font-size:16px;
+	border-bottom:1px dashed #333;
+}
+.bread a{
+	color:#0072E4;
+}
+.bread a:hover{
+	color:#0072E4;
+}
+/*面包屑导航end*/
+/*文章内容*/
+.content{
+	width:85%;
+	margin:0 auto;
+	font-size:16px;
+	line-height:1.8;
+}
+.content .title{
+	font-size:32px;
+}
+.content .intro{
+	border-radius:10px;
+	background:#cacaca;
+	padding:10px;
+	margin:15px 0 20px 0;
+}
+.content img{
+	max-width: 100%;
+}
+.list-paddingleft-2{
+	padding-left:30px;
+}
+
+/*文章内容end*/
+/* bootstrap分页 */
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #337ab7;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  margin-left: -1px;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  z-index: 2;
+  color: #23527c;
+  background-color: #eeeeee;
+  border-color: #dddddd;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  z-index: 3;
+  color: #ffffff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+  cursor: default;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #777777;
+  background-color: #ffffff;
+  border-color: #dddddd;
+  cursor: not-allowed;
+}
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.pager {
+  padding-left: 0;
+  margin: 20px 0;
+  list-style: none;
+  text-align: center;
+}
+.pager li {
+  display: inline;
+}
+.pager li > a,
+.pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+}
+.pager li > a:hover,
+.pager li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+.pager .next > a,
+.pager .next > span {
+  float: right;
+}
+.pager .previous > a,
+.pager .previous > span {
+  float: left;
+}
+.pager .disabled > a,
+.pager .disabled > a:hover,
+.pager .disabled > a:focus,
+.pager .disabled > span {
+  color: #777777;
+  background-color: #ffffff;
+  cursor: not-allowed;
+}
+.clearfix:before,
+.clearfix:after,
+.pager:before,
+.pager:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after,
+.pager:after {
+  clear: both;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.hidden {
+  display: none !important;
+}
+.affix {
+  position: fixed;
+}
+
+/* bootstrap分页end */
+/* 网页加载loading */
+.shade{
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	background:#eee;
+	z-index:999;
+	overflow:hidden;
+}
+.spinner {
+	position:absolute;
+  	width: 60px;
+  	height: 60px;
+  	top:40%;
+  	left:50%;
+  	margin-right:30px;
+  
+}
+.container1 > div, .container2 > div{
+  width: 15px;
+  height: 15px;
+  background-color: #337ab7;
+  border-radius: 100%;
+  position: absolute;
+  -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+  animation: bouncedelay 1.2s infinite ease-in-out;
+}
+@keyframes bouncedelay{
+	0%,80%,100%{
+		transform:scale(0);
+	}
+	40%{
+		transform:scale(1);
+	}
+}
+.spinner .spinner-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container2 {
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+ 
+.container3 {
+  -webkit-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.circle1 { top: 0; left: 0; }
+.circle2 { top: 0; right: 0; }
+.circle3 { right: 0; bottom: 0; }
+.circle4 { left: 0; bottom: 0; }
+.container2 .circle1{
+	animation-delay:-1.1s;
+}
+.container1 .circle2{
+	animation-delay:-0.9s;
+}
+.container2 .circle2{
+	animation-delay:-0.8s;
+}
+.container1 .circle3{
+	animation-delay:-0.6s;
+}
+.container2 .circle3{
+	animation-delay:-0.5s;
+}
+.container1 .circle4{
+	animation-delay:-0.3s;
+}
+.container2 .circle4{
+	animation-delay:-0.2s;
+}
+/* 网页加载loadingend */

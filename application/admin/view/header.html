@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+	<title>博客后台管理系统</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/static/common/images/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/Base.css">
+	<link rel="stylesheet" type="text/css" href="{$css}">
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/flatpickr.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/fileinput.min.css">
+	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+<!-- 头部组建 -->
+<div class="header">
+	<div class="container-fluid">
+		<div class="logo">
+			<a href="/admin">
+				<img src="/static/common/images/logo.jpg">
+				<h1>Blog后台管理系统</h1>
+			</a>
+		</div>
+		<p style="display:block" class="Expiredreminder lead text-center col-md-4">
+		</p>
+		<div class="admin">
+			<div class="btn-group">
+				<button id="adminname" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				{$Think.session.username}</button>
+				<ul class="dropdown-menu">
+				  	<li><a href="/">返回官网</a></li>
+				    <li><a href="javascript:" data-toggle="modal" data-target="#modifyPassword">修改密码</a></li>
+				    <li><a id="jianli_switch" href="javascript:">
+				    {switch name="$system.work_status"}
+					    {case value="0"}开启简历{/case}
+					    {case value="1"}关闭简历{/case}
+					{/switch}
+					</a></li>
+				    <li role="separator" class="divider"></li>
+				    <li><a href="/admin/logout">退出</a></li>
+				</ul>
+			</div>
+			欢迎您
+		</div>
+	</div>
+</div>

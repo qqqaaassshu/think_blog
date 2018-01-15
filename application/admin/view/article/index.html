@@ -1,0 +1,103 @@
+	<div class="container-fluid content">
+		<div class="table-responsive">
+			<a href="/admin/create" class="add btn btn-primary pull-left">发布文章</a>
+			<form id="article_result"  class="form-inline pull-right" method="get" action="/admin/search">
+				<div class="form-group">
+				    <label for="title">文章名称:</label>
+				    <input type="text" name="title" class="form-control" id="title" placeholder="搜索内容" value="{$data.title}">
+				</div>
+				<div class="form-group">
+				    <label for="type">分类:</label>
+				    <select class="form-control" name="type" id="type">
+				    	{switch name=$data.type}
+				    		{case value="1"}
+					    	   <option value="0">All</option>
+							   <option value="1" selected>CSS3</option>
+							   <option value="2">HTML5</option>
+							   <option value="3">Javascript</option>
+							{/case}
+							{case value="2"}
+							   <option value="0">All</option>
+							   <option value="1">CSS3</option>
+							   <option value="2" selected>HTML5</option>
+							   <option value="3">Javascript</option>
+							{/case}
+							{case value="3"}
+							   <option value="0">All</option>
+							   <option value="1">CSS3</option>
+							   <option value="2">HTML5</option>
+							   <option value="3" selected>Javascript</option>
+							{/case}
+							{case value="0"}
+							   <option value="0" selected>All</option>
+							   <option value="1">CSS3</option>
+							   <option value="2">HTML5</option>
+							   <option value="3">Javascript</option>
+							{/case}
+						{/switch}
+					</select>
+				</div>
+				<div class="form-group">
+				    <label>发布时间:</label>
+				    <p class="flatpickr" data-wrap="true" data-click-opens="false" style="display:inline">
+						<input name="start" id="start" class="form-control" data-max-date=today value="{$data.start}"  data-input>
+
+						<a class="input-btn" data-toggle><i class="icon-calendar"></i></a>
+						<a class="input-btn" data-clear><i class="icon-close"></i></a>
+					</p> -
+				     <input name="end" id="end" type="text" class="form-control" data-max-date=today value="{$data.end}">
+				</div>
+				<div class="form-group">
+				    <button id="search_article" class="btn btn-default">搜索</button>
+				</div>
+			</form>
+		  <table class="table table-bordered table-hover">
+		    <thead>
+		    	<tr>
+		    		<td width="25%">标题</td>
+		    		<td>分类</td>
+		    		<td width="30%">简介</td>
+		    		<td>发布时间</td>
+		    		<td>修改时间</td>
+		    		<td>操作</td>
+		    	</tr>
+		    </thead>
+		    {volist name="list" id="article"}
+		    <tr>
+		    		<td>{$article.title}</td>
+		    		{switch name=$article.type}
+					    {case value="1"}
+							<td>CSS3</td>
+					    {/case}
+					    {case value="2"}
+							<td>HTML5</td>
+					    {/case}
+					    {case value="3"}
+							<td>Javascript</td>
+					    {/case}
+					{/switch}
+		    		<td>{$article.intro}</td>
+		    		<td>{$article.create_time}</td>
+		    		<td>{$article.update_time}</td>
+		    		<td><a href="/admin/modify/{$article.id}">编辑</a> | 
+		    					{switch name=$article.status }
+								    {case value="1" break="0或1"}
+								     <a class="status" href="javascript:" title="{$article.id}">隐藏</a>{/case}
+								    {case value="0"}
+								     <a class="status" href="javascript:" title="{$article.id}">显示</a>
+								    {/case}
+								{/switch}
+								| <a class="del-article" href="javascript:" title="{$article.id}">删除</a></td>
+		    </tr>
+		    {/volist}
+		  </table>
+		  {$list->render()}
+		</div>
+	</div>
+	<script src="/static/admin/js/flatpickr.min.js"></script>
+	<script>
+	$(function(){
+		$('#start').flatpickr();
+		$('#end').flatpickr();
+	})
+	</script>

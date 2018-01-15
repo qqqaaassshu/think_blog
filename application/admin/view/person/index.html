@@ -1,0 +1,64 @@
+
+	<div class="container-fluid content">
+		<div class="col-md-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">人物信息修改</h3>
+				</div>
+				<div class="panel-body">
+					<form id="person_modify" method="post" enctype="multipart/form-data">
+					  <div class="form-group">
+					    <label for="nickname">昵称</label>
+					    <input type="text" class="form-control" name="nickname" id="nickname" value="{$admin.nickname}" minlength="2" maxlength="10" required>
+					  </div>
+					  <div class="form-group">
+					   <label id="logo">头像</label>
+					   <input id="upload" name="image" type="file">
+					   <p class="text-danger">Notic:不上传图片则默认不修改logo</p>
+					  </div>
+					  <div class="form-group">
+					    <label for="nickname">简介</label>
+					    <textarea class="form-control" name="intro" rows="3" maxlength="10">{$admin.intro}</textarea>
+					  </div>
+					  <button class="btn btn-default">修改</button>
+					  <span style="display:none" id="info" class="text-warning"></span>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/static/admin/js/fileinput.min.js"></script>
+	<script src="/static/admin/js/fileinput_locale_zh.js"></script>
+	<script>
+		$(function(){
+			$("#upload").fileinput({
+				language: 'zh',
+				uploadUrl:'/admin/person_logo',
+				showUploadedThumbs:false,
+				dropZoneEnabled: false,
+				showUpload: false,
+				maxFileSize: 1024,
+				allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
+				layoutTemplates:{
+					main1: '{preview}\n' +
+				        '<div class="input-group {class}">\n' +
+				        '   {caption}\n' +
+				        '   <div class="input-group-btn">\n' +
+				        '       {remove}\n' +
+				        '       {cancel}\n' +
+				        '       {upload}\n' +
+				        '       {browse}\n' +
+				        '   </div>\n' +
+				        '</div>',
+					actions: '<div class="file-actions">\n' +
+				        '    <div class="file-footer-buttons">\n' +
+				        '        {delete} {zoom} {other}' +
+				        '    </div>\n' +
+				        '    {drag}\n' +
+				        '    <div class="file-upload-indicator" title="{indicatorTitle}">{indicator}</div>\n' +
+				        '    <div class="clearfix"></div>\n' +
+				        '</div>'
+				}
+			})
+		})
+	</script>

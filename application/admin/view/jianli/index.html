@@ -1,0 +1,120 @@
+
+	<div class="container-fluid content">
+		<div class="col-md-6 person">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">人物简历修改</h3>
+				</div>
+				<div class="panel-body">
+					<form id="JL" method="post">
+					  <div class="form-group">
+					    <label for="name">姓名</label>
+					    <input type="text" class="form-control" id="name" name="name" value="{$Intro.name}" minlength="2" maxlength="4" required>
+					  </div>
+					  <div class="form-group">
+					   <label for="date">出生年月</label>
+					   <input id="date" name="birth" class="form-control" type="text" value="{$Intro.birth}" data-max-date=today>
+					  </div>
+					  <div class="form-group">
+					   <label for="person_type">政治面貌</label>
+					   <select id="person_type" name="person_type" class="form-control">
+					   {switch name=$Intro.person_type}
+						    {case value="1"}
+							<option value="1" selected>群众</option>
+						    <option value="2">团员</option>
+						    <option value="3">党员</option>
+						    {/case}
+						    {case value="2"}
+								<option value="1">群众</option>
+							    <option value="2" selected>团员</option>
+							    <option value="3">党员</option>
+						    {/case}
+						    {default /}
+						    	<option value="1">群众</option>
+							    <option value="2">团员</option>
+							    <option value="3" selected>党员</option>
+						{/switch}
+					   </select>
+					  </div>
+					  <div class="form-group">
+					    <label for="school">毕业院校</label>
+					    <input id="school" name="school" class="form-control" type="text" value="{$Intro.school}" minlength="5" maxlength="12" required>
+					  </div>
+					  <div class="form-group">
+					    <label for="major">专业</label>
+					    <input id="major" name="major" class="form-control" type="text" value="{$Intro.major}" minlength="2" maxlength="6" required>
+					  </div>
+					  <div class="form-group">
+					    <label for="address">地址</label>
+					    <input id="address" name="address" class="form-control" type="text" value="{$Intro.address}" minlength="12" maxlength="20" required>
+					  </div>
+					  <div class="form-group">
+					    <label for="tel">电话</label>
+					    <input id="tel" name="tel" class="form-control" type="text" value="{$Intro.tel}" maxlength="11" required>
+					  </div>
+					  <div class="form-group">
+					    <label for="email">Email</label>
+					    <input id="email" name="email" class="form-control" type="text" value="{$Intro.email}" email='true' required>
+					  </div>
+					  <div class="form-group">
+					    <label for="education">教育背景</label>
+					    <input id="education" name="education" class="form-control" type="text" value="{$Intro.education}" minlength="2" maxlength="4" required>
+					  </div>
+					  <div class="form-group">
+					    <label for="intro">自我描述</label>
+					    <textarea id="intro" name="intro" class="form-control" rows="3" minlength="10" maxlength="100" required>{$Intro.intro}</textarea>
+					  </div>
+					  <button id="JL_modify" class="btn btn-default">修改</button>
+					  <span style="display:none" id="info" class="text-warning"></span>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 work">
+			<div class="panel panel-primary">
+			  	<div class="panel-heading">
+			   		<h3 style="display:inline-block" class="panel-title">履历情况</h3><a id="addWork" href="javascript:">新增履历</a>
+			   	</div>
+			   	<form id="work_modify" method="post">
+			   	{volist name="list" id="intro"}
+				   	<div class="panel-body">
+				   		<span class="num">{$i}.</span><a class="delWork" href="javascript:">删除</a>
+				   		<i class="clearfix"></i>
+				   		<input class="id" type="hidden" value="{$intro.id}" name="id[]">
+				    	<div class="form-group time">
+						    <label for="start">工作时间</label>
+						    <input name="start[]" class="start{$i} form-control" type="text" value="{$intro.start}">
+					    </div>
+					    -
+					    <div class="form-group time">
+						    <label for="end">离职时间</label>
+						    <input name="end[]" class="end{$i} form-control" type="text" value="{$intro.end}" data-max-date=today>
+					    </div>
+					    <div class="form-group">
+						    <label for="company">公司名称</label>
+						    <input name="company[]" id="company" class="form-control" type="text" value="{$intro.company}" minlength="5" maxlength="12" required>
+						</div>
+					    <div class="form-group">
+						    <label for="job">岗位</label>
+						    <input name="job[]" id="job" class="form-control" type="text" value="{$intro.job}" minlength="2" maxlength="10" required>
+						</div>
+					    <div class="form-group">
+					    	<label for="intro">工作概况</label>
+					    	<textarea name="intro[]" id="intro" class="form-control" rows="3" minlength="10" maxlength="150">{$intro.intro}</textarea>
+					    </div>
+					</div>
+					{/volist}
+					<button id="save" class="btn btn-primary">修改</button>
+					<span style="display:none" id="info1" class="text-warning"></span>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="/static/admin/js/flatpickr_gai.js"></script>
+	<script>
+		$(function(){
+			$('#date').flatpickr({
+				'static':true
+			});
+		})
+	</script>

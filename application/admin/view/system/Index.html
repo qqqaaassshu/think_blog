@@ -1,0 +1,56 @@
+
+	<div class="container-fluid content">
+		<div class="col-md-12">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					系统信息
+				</div>
+				<div class="panel-body">
+					<div class="table-responsive">
+					  <table class="table table-hover table-striped table-bordered">
+					  <thead>
+					  	<tr>
+					  		<td>系统信息</td>
+					  		<td>信息</td>
+					  	</tr>
+					  </thead>
+					  <tbody>
+					  	<tr>
+							<td>PHP版本号:</td>
+							<td><?php echo PHP_VERSION ?></td>
+						</tr>
+						<tr>
+							<td>系统类型:</td>
+							<td><?php echo php_uname('s') ?></td>
+						</tr>
+						<tr>
+							<td>主机地址:</td>
+							<td><?php echo $_SERVER["HTTP_HOST"] ?></td>
+						</tr>
+						<tr>
+							<td>服务器IP:</td>
+							<td><?php echo GetHostByName($_SERVER['SERVER_NAME']) ?></td>
+						</tr>
+						<tr>
+							<td>服务器语言:</td>
+							<td><?php echo $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?></td>
+						</tr>
+						<tr>
+							<td>当前IP:</td>
+							<td><?php echo $_SERVER['REMOTE_ADDR'] ?></td>
+						</tr>
+						<tr>
+							<td>PHP运行方式:</td>
+							<td><?php echo php_sapi_name() ?></td>
+						</tr>
+					  </tbody>
+					  </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+		})
+	</script>

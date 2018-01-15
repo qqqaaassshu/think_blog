@@ -1,0 +1,169 @@
+html,body{
+	width:100%;
+	height:100%;
+}
+.container{
+	overflow:hidden;
+}
+.person .container,.intro .container{
+	margin-top:2rem;
+}
+.swiper-container{
+	height:100%;
+	width:100%;
+}
+.person{
+	background:url('/static/index/images/01.jpg') 100% 100% no-repeat;
+	font-size:32px;
+}
+.logo{
+	width:3rem;
+}
+.name{
+	text-shadow: gray 1px 1px 4px;
+}
+.random{
+	text-shadow:1px 1px 4px gray;
+	color:white
+}
+/*工作履历页*/
+.work{
+	background:url('/static/index/images/02.jpg') 100% 100% no-repeat;
+}
+.work .container{
+	overflow:hidden;
+}
+.works{
+	overflow:hidden;
+	margin:.1rem .35rem;
+	border-radius: 10px;
+	background:#4183c4;
+}
+.work .time{
+	width:1.6rem;
+	height:50px;
+	font-size:14px;
+	color:white;
+	padding:.5rem .1rem 0 .1rem;
+}
+.work .content{
+	width:3.8rem;
+	padding:.1rem 0 .1rem .1rem;
+	background:white;
+	line-height:1.5;
+	transition:height .4s;
+}
+.work .content p{
+	text-indent: 2em;
+}
+.work .content .small{
+	display:block;
+}
+/*手机版的履历想了想还是省略了，只放三个履历高度其实还是会超过屏幕*/
+.text-ellipsis{
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.work .content .active{
+	-webkit-line-clamp: 100;
+	height:auto;
+}
+.work .line{
+	display:none;
+}
+/*工作履历页end*/
+.intro{
+	background:url('/static/index/images/03.jpg') 100% 100% no-repeat;
+}
+.swiper-intro{
+	position:relative;
+	width:5.5rem;
+	margin: 0 auto;
+	background:white;
+	overflow:hidden;
+	border-radius:10px;
+	font-size:14px;
+}
+.intro-box{
+	box-sizing:border-box;
+	padding:.2rem .6rem;
+}
+.product{
+	background:url('/static/index/images/04.jpg') 100% 100% no-repeat;
+}
+.future{
+	background:url('/static/index/images/05.jpg') 100% 100% no-repeat;
+}
+.future h2{
+	font-size:32px;
+}
+.future p{
+	font-size:14px;
+	margin-top:.4rem;
+}
+@media screen and (min-width: 400px) and (max-width: 700px) {
+	.name{
+		font-size:40px;
+	}
+	.random{
+		font-size:40px;
+	}
+	.work .time{
+		font-size:16px;
+	}
+	.work .content{
+		font-size:14px;
+	}
+	.work h3{
+		font-size:20px;
+	}
+	.swiper-intro{
+		font-size:16px;
+	}
+	.intro h3{
+		font-size:24px;
+	}
+	.future h2{
+		font-size:40px;
+	}
+	.future p{
+		font-size:20px;
+	}
+}
+@media screen and (min-width: 700px){
+	.name{
+		font-size:50px;
+	}
+	.random{
+		font-size:50px;
+	}
+	.work .time{
+		font-size:24px;
+	}
+	.work .content{
+		font-size:20px;
+	}
+	.work h3{
+		font-size:32px;
+	}
+	.swiper-intro{
+		font-size:24px;
+	}
+	.intro h3{
+		font-size:32px;
+	}
+	.future h2{
+		font-size:50px;
+	}
+	.future p{
+		font-size:30px;
+	}
+	/*右侧导航点*/
+	.swiper-pagination-bullet{
+		width:16px;
+		height:16px;
+	}
+}

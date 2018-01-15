@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+	<title>Hcm-intro</title>
+	<link rel="icon" href="/static/common/images/favicon.ico">
+	<link rel="stylesheet" href="/static/index/css/Base.css">
+	<link rel="stylesheet" href="{$css}">
+	<script src="http://apps.bdimg.com/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		function isPhone() {
+		    var userAgentInfo = navigator.userAgent;
+		    var Agents = ["Android", "iPhone",
+		                "SymbianOS", "Windows Phone",
+		                "iPad", "iPod"];
+		    var flag = false;
+		    for (var v = 0; v < Agents.length; v++) {
+		        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+		            flag = true;
+		            break;
+		        }
+		    }
+		    return flag;
+		}
+		if(isPhone()){
+			$('head link[href="{$css}"]').eq(0).attr('href','{$Pcss}');
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 6.4 + 'px';
+		}
+	</script>
+	<link rel="stylesheet" href="/static/index/css/swiper.min.css">
+	<link rel="stylesheet" href="/static/index/css/animate.min.css">
+	{switch name=$system.work_status}
+		{case value='0'}
+		<script>
+			if({$system.work_status} ==0){
+				alert('已找到工作，此页面关闭');
+				history.back();
+			}
+		</script>
+		{/case}
+	{/switch}
+</head>
+<body>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide person Tc">
+			<div class="container">
+				<a href="/"><img class="logo circle ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" src="/static/common/images/logo.jpg"></a>
+				<p class="name Tc ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">{$intro.name}</p>
+				<p id="random" class="random Tc" >{$person.intro}</p>
+			</div>
+			</div>
+			<div class="swiper-slide work">
+				<div class="container">
+					{volist name="work" id="list" mod="2" }
+						{eq name="mod" value="0"}
+							<div class="l-works works ani" swiper-animate-effect="flipInX" swiper-animate-duration="1s" swiper-animate-delay="{$i*0.3}s">
+								<div class="content Bgw fl">
+									<h3>{$list.company}<span class="small">{$list.job}</span></h3>
+									<p>{$list.intro}</p>
+								</div>
+								<div class="time fl">
+									<p class="Tr">{$list.start}</p>
+									<p class="Tl">{$list.end}</p>
+								</div>
+							</div>
+						{/eq}
+						{eq name="mod" value="1"}
+							<div class="r-works works ani" swiper-animate-effect="flipInX" swiper-animate-duration="1s" swiper-animate-delay="{$i*0.3}s">
+								<div class="time fl">
+									<p class="Tl">{$list.start}</p>
+									<p class="Tr">{$list.end}</p>
+								</div>
+								<div class="content Bgw fr">
+									<h3>{$list.company}<span class="small">{$list.job}</span></h3>
+									<p>{$list.intro}</p>
+								</div>
+							</div>
+						{/eq}
+					{/volist}
+					<div class="line ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.2s"></div>
+				</div>
+			</div>
+			<div class="swiper-slide intro">
+				<div class="container">
+					<div class="swiper-intro ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide intro-box">
+								<h3>个人信息</h3>
+								<table>
+									<tbody>
+										<tr>
+											<td width="50%">姓名:</td>
+											<td>{$intro.name}</td>
+										</tr>
+										<tr>
+											<td>出生年月:</td>
+											<td>{$intro.birth}</td>
+										</tr>
+										<tr>
+											<td>政治面貌:</td>
+											<td>
+												{switch name=$intro.person_type}
+												    {case value="1"}
+														群众
+												    {/case}
+												    {case value="2"}
+														团员
+												    {/case}
+												    {default /}
+														党员
+												{/switch}
+											</td>
+										</tr>
+										<tr>
+											<td>毕业院校:</td>
+											<td>{$intro.school}</td>
+										</tr>
+										<tr>
+											<td>专业:</td>
+											<td>{$intro.major}</td>
+										</tr>
+										<tr>
+											<td>教育背景:</td>
+											<td>{$intro.education}</td>
+										</tr>
+										<tr>
+											<td>Email:</td>
+											<td>{$intro.email}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="swiper-slide intro-box">
+								<h3>自我描述:</h3>
+								<p>{$intro.intro}</p>
+							</div>
+						</div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide future">
+				<div class="container mt200 Tc white">
+					<h2>学无止境</h2>
+					<p>不积跬步无以至千里,不积小流无以成江海</p>
+					<p>如果您有意向请联系我!</p>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<script src="{$js}"></script>
+	<script src="/static/index/js/swiper.jquery.min.js"></script>
+	<script src="/static/index/js/swiper.animate1.0.2.min.js"></script>
+	<script>
+		$(window).load(function(){
+			var swiper =new Swiper ('.swiper-container', {
+			    direction: 'vertical',
+			    keyboardControl:true,
+			    mousewheelControl:true,
+			    speed:1000,
+			    pagination: '.swiper-pagination',
+			    paginationClickable:true,
+			    paginationHide:true,
+			    onInit:function(swiper){ //Swiper2.x的初始化是onFirstInit
+					swiperAnimateCache(swiper); //隐藏动画元素
+					swiperAnimate(swiper); //初始化完成开始动画
+				},
+			    onSlideChangeEnd: function(swiper){
+			        swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+			        if(swiper.activeIndex==0){
+			        	person.RandomText(500);
+			        }else{
+			        	$('#random span').css({opacity:0});
+			        }
+			    }
+			})
+			var swiper =new Swiper ('.swiper-intro',{
+				nextButton: '.swiper-button-next',
+    			prevButton: '.swiper-button-prev',
+
+			})
+		})
+	</script>
+</body>
+</html>

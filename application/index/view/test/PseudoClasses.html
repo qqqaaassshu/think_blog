@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Hcm-伪类测试页</title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			font-family:'arial','Microsoft YaHei';
+		}
+		.header{
+			height:90px;
+			line-height:1.7;
+			text-align:center;
+			background:#eee;
+		}
+		.wrapper{
+			width:1200px;
+			margin:20px auto;
+		}
+		.list,.content{
+			float:left;
+			border:2px solid #101010;
+			background:#eee;
+			color:black;
+		}
+		.list{
+			list-style-type:none;
+			width:200px;
+			border-radius:5px;
+			text-align:center;
+		}
+		.list li{
+			line-height:30px;
+			cursor:pointer;
+		}
+		.list li:hover .tips{
+			display:block;
+		}
+		.tips{
+			width:200px;
+			display:none;
+			background:black;
+			color:red;
+			font:normal 12px/1.7 'arial','Microsoft YaHei';
+			text-align:left;
+			text-indent:2em;
+			z-index:999;
+			right:0;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+		.content{
+			position:fixed;
+			width:912px;
+			margin-left:240px;
+			padding:20px;
+		}
+		.activity{
+			background:#272822;
+			color:#f8f8f2;
+		}
+		.activity .tips{
+			display:block;
+		}
+		a:visited{
+			color:yellow;
+		}
+		a:hover{
+			color:red;
+		}
+		a:active{
+			color:green;
+		}
+		:target{background:yellow;}
+	</style>
+	<script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body>
+	<div class="header">
+		<p>由于IE8只支持部分伪类，为了更好的展示全部伪类的特性，最好使用IE10+、谷歌浏览器、火狐浏览器！</p>
+		<p>每次测试只能点击一个伪类，不支持多个伪类综合测试</p>
+		<p>此页面的测试效果滑过具体伪类会有说明</p>
+	</div>
+	<div class="wrapper">
+		<ul class="list">
+			<li>a:link<div class="tips">匹配未访问的链接添加样式,此次测试改变链接的背景颜色为黄色（因效果特殊无需点击也可以产生效果）</div>
+			</li>
+			<li>a:hover<div class="tips">匹配鼠标悬停在链接上时的状态添加样式,此次测试改变链接的字体颜色为红色（因效果特殊无需点击也可以产生效果）</div></li>
+			<li>a:active<div class="tips">匹配鼠标点击在链接上时的状态添加样式,此次测试改变链接的字体颜色为绿色（因效果特殊无需点击也可以产生效果）</div></li>
+			<li>a:visited<div class="tips">匹配已访问的链接添加样式,此次测试改变链接的字体颜色为蓝色（因效果特殊无需点击也可以产生效果）</div></li>
+			<li>input:disabled<div class="tips">匹配所有禁用的元素（一般为表单元素）添加样式，此次测试改变背景颜色为黄色</div></li>
+			<li>:empty<div class="tips">匹配没有子元素的元素（包括DOM节点）添加样式，此次测试改变背景颜色为黄色</div></li>
+			<li>input:enabled<div class="tips">匹配所有可用的元素（一般为表单元素）添加样式，此次测试改变背景颜色为黄色</div></li>
+			<li>input:in-range<div class="tips">用于type类型为number的表单，匹配范围在规定中的元素添加样式，此次测试改变背景颜色为黄色</div></li>
+			<li>input:out-of-range<div class="tips">
+				用于type类型为number的表单，匹配范围在规定外的元素添加样式，此次测试改变背景颜色为黄色
+			</div></li>
+			<li>input:invalid<div class="tips">用于HTML5新增的表单元素，匹配验证不通过的元素添加样式，此次测试改变背景颜色为黄色</div></li>
+			<li>input:valid<div class="tips">匹配验证通过的元素添加样式，此次测试改变背景颜色为黄色</div></li>
+			<li>li:first-of-type<div class="tips">匹配父元素中的第一个此元素添加样式，此次测试改变背景颜色为黄色</div></li>
+			<li>li:first-child<div class="tips">匹配此元素为父元素的第一个子元素才可添加样式，此次测试改变背景颜色为黄色</div></li>
+			<li>li:last-child<div class="tips">匹配此元素为父元素的最后一个子元素才可添加样式，此次测试改变背景颜色为黄色</div></li>
+			<li>li:last-of-type<div class="tips">匹配父元素中的最后一个此元素添加样式，此次测试改变背景颜色为黄色</div></li>
+			<li>:not(h2)<div class="tips">匹配除了选中的元素之外的元素添加样式，此次测试改变背景颜色为黄色</div></li>
+			<li>li:nth-child(4)<div class="tips">匹配父元素中第n（从1开始）个元素添加样式，如果那个元素不是选取的元素则样式无效，此次测试n默认为4，改变背景颜色为黄色</div></li>
+			<li>li:nth-last-child(5)<div class="tips">与nth-child(n)很像，只不过这个n是倒数的，此次测试n默认为5，改变背景颜色为黄色</div></li>
+			<li>li:nth-of-type(4)<div class="tips">
+			匹配父元素中此元素的第n（从1开始）个添加样式，如果n>元素数量，则样式无效，此次测试n默认为4，改变背景颜色为黄色
+			</div></li>
+			<li>li:nth-last-of-type(5)<div class="tips">
+				与nth-of-type(n)很像，只不过这个n是倒数的，此次测试默认n默认为5，此次测试改变背景颜色为黄色
+			</div></li>
+			<li>span:only-of-type<div class="tips">
+				匹配父元素中只有此元素才为此元素添加样式，此次测试改变背景颜色为黄色
+			</div></li>
+			<li>span:only-child<div class="tips">
+				匹配仅有一个子元素的此元素添加样式，此次测试改变背景颜色为黄色
+			</div></li>
+			<li>input:read-only<div class="tips">匹配设置只读属性的元素（一般为表单元素），此次测试改变背景颜色为黄色</div></li>
+			<li>input:read-write<div class="tips">匹配可读、可写的元素（一般为表单元素），此次测试改变背景颜色为黄色</div></li>
+			<li>input:optional<div class="tips">匹配没有设置required的表单元素，仅限input、select、textarea，此次测试改变背景颜色为黄色</div></li>
+			<li>input:required<div class="tips">匹配设置required的表单元素，仅限input、select、textarea，此次测试改变背景颜色为黄色</div></li>
+			<li>:root<div class="tips">匹配文档的根元素也就是html，此次测试改变背景颜色为黄色</div></li>
+			<li>:target<div class="tips">匹配链接到的元素添加样式，此链接为页面中的元素#开头，不清楚可以查询锚链接，此次测试改变背景颜色为黄色（因效果特殊无需点击也可以产生效果）</div></li>
+			<li>input:focus<div class="tips">匹配被选中的表单元素，仅限能够接受键盘事件或者用户输入的元素，此次测试改变背景颜色为黄色</div></li>
+			<li>p:lang(zh)<div class="tips">匹配带有lang属性的元素，此次测试改变背景颜色为黄色</div></li>
+		</ul>
+		<div class="content">
+			<h2>链接测试</h2>
+				<a href="http://hcm-blog.com">链接测试</a>
+			<h2>表单测试</h2>
+				<input type="text" required placeholder="快来测试我呀，大爷！">
+				<input type="number" min="5" max="10" value="7">
+				<input type="text" disabled readonly placeholder="别碰我呀，混蛋！">
+				<input type="email" placeholder="邮箱地址测试">
+				<br>
+				<input type="checkbox">我能变大
+				<input type="checkbox">我也能变大
+				<input type="radio">选我，大兄弟
+			<h2>父子元素测试</h2>
+				<ul>
+					<li>我是第一li</li>
+					<li>我是第二li</li>
+					<li>我是第三li</li>
+					<div>我是第四div</div>
+					<li>我是第五li</li>
+					<li>我是第六li</li>
+					<li>我是第七li</li>
+					<li>我是第八li</li>
+				</ul>
+				<ul>
+					<div>我是第一div</div>
+					<li>新的UL</li>
+					<li>新的UL</li>
+					<li>新的UL</li>
+					<li>新的UL</li>
+					<li>新的UL</li>
+					<li>新的UL</li>
+					<li>新的UL</li>
+				</ul>
+				<h2>单独元素测试</h2>
+				<p>我有一个儿子<span>我是儿子</span></p>
+				<p>我有两个儿子<span>我是大儿子span</span><i>我是二儿子i</i></p>
+				<p lang="zh">lang伪类测试</p>
+				<h2>锚链测试</h2>
+				<a href="#sa">锚链接</a>
+				<p id="sa">我要变色了！</p>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			$('.list li').click(function(){
+				$(this).addClass('activity');
+				$(this).siblings().removeClass('activity');
+				var preg=/(.+<div)/;
+				var class_name= $(this).html().match(preg)[0].replace(/<div/,'');
+				// var selector ='.content '+class_name;
+				$('*').css({'background':''});
+				$('.content '+class_name).css({'background':'yellow'});
+				if(class_name == ":root"){
+					$(class_name).css({'background':'yellow'});
+				}
+				if(class_name =="input:focus"){
+					$('input').focus(function(){
+						$(this).css({'background':'yellow'});
+					})
+				}else{
+					$('input').unbind();
+				}
+			})
+		})
+	</script>
+</body>
+</html>

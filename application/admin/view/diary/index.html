@@ -1,0 +1,46 @@
+
+	<div class="container-fluid content">
+		<div class="table-responsive">
+			<a href="/admin/diary/create" class="add btn btn-primary pull-left">发布日记</a>
+			<form id="diary_result"  class="form-inline pull-right" method="get" action="/admin/diary/search">
+				<div class="form-group">
+				    <label for="title">日记标题:</label>
+				    <input type="text" name="title" class="form-control" id="title" placeholder="搜索内容" value='{$data.title}'>
+				</div>
+				<div class="form-group">
+				    <label>发布时间:</label>
+				    <input name="start" id="start" type="text" class="form-control" data-time_24hr=true value='{$data.start}'> -
+				     <input name="end" id="end" type="text" class="form-control" data-time_24hr=true data-max-date=today value='{$data.end}'>
+				</div>
+				<div class="form-group">
+				    <button id="search_diary" class="btn btn-default">搜索</button>
+				</div>
+			</form>
+		  <table class="table table-bordered table-hover">
+		    <thead>
+		    	<tr>
+		    		<td width="20%">标题</td>
+		    		<td width="60%">内容</td>
+		    		<td>发布时间</td>
+		    		<td>操作</td>
+		    	</tr>
+		    </thead>
+		    {volist name="list" id="diary"}
+		    <tr>
+		    		<td>{$diary.title}</td>
+		    		<td>{$diary.content}</td>
+		    		<td>{$diary.create_time}</td>
+		    		<td><a href="/admin/diary/modify/id/{$diary.id}" title="{$diary.id}">编辑</a> | <a class="del_diary" href="javascript:" title="{$diary.id}">删除</a></td>
+		    </tr>
+		    {/volist}
+		  </table>
+		  {$list->render()}
+		</div>
+	</div>
+	<script src="/static/admin/js/flatpickr.min.js"></script>
+	<script>
+	$(function(){
+		$('#start').flatpickr();
+		$('#end').flatpickr();
+	})
+	</script>

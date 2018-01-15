@@ -1,0 +1,387 @@
+html,body{
+	width:100%;
+	height:100%;
+}
+body{
+	word-break: break-all;
+}
+h2{
+	font-size:16px;
+	color:black;
+}
+.container{
+	padding:0 0.2rem;
+}
+.index ul li{
+	list-style-type: none
+}
+.article{
+	height:100%;
+	background:#f4f4f4;
+}
+.person{
+	position:relative;
+	height: 2rem;
+	overflow:hidden;
+	z-index:99;
+}
+.person .container{
+	position: relative;
+	height: 100%;
+}
+.person .personInfo{
+	position: absolute;
+	width:3rem;
+	top:0.4rem;
+	color:white;
+}
+.person .personInfo .head{
+	float:left;
+	width:1rem;
+	height:1rem;
+	border:1px solid white;
+}
+/*个人姓名座右铭*/
+.me{
+	float:left;
+	margin:.2rem 0 0 .1rem;
+}
+.name{
+	display:none;
+	font-size:18px;
+	line-height:1;
+	text-shadow:1px 1px 1px gray;
+}
+.left .name{
+	float:left;
+	margin:.4rem .2rem;
+}
+.me p{
+	display:none;
+}
+/*个人姓名座右铭end*/
+/*幻灯片*/
+#banner{
+	width: 100%;
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	z-index:-999;
+}
+#banner li{
+	position:absolute;
+	display:none;
+	width:100%;
+	height:100%;
+	background-size:cover;
+	background-position:right center;
+}
+/*幻灯片end*/
+/*菜单*/
+.menu{
+	display:none;
+	position:absolute;
+	width:.5rem;
+	height:.5rem;
+	border-radius:.1rem;
+	background:#337AB7 url('/static/index/images/phone-nav.png') center no-repeat;
+	background-size:.3rem .3rem;
+	top:10px;
+	right:10px;
+	opacity:.7;
+}
+.nav{
+	display:none;
+	float:right;
+	width:1.5rem;
+	margin-right:-1.7rem;
+	height:100%;
+	background:#337AB7;
+	opacity:.8;
+}
+.nav li{
+	height:.5rem;
+	line-height:.5rem;
+	text-align:center;
+}
+.nav li a{
+	color:white;
+}
+/*菜单end*/
+/*文章列表*/
+/*.list{
+	margin:0 .2rem;
+}*/
+.list li{
+	border-bottom:1px dashed #333;
+	padding:.2rem;
+}
+.list .text{
+	min-height:1rem;
+	text-indent:2em;
+	padding:.2rem;
+}
+/*文章列表end*/
+/*日记*/
+.today{
+	margin-top:.2rem;
+}
+.today p{
+	text-indent:2em;
+	padding:.2rem;
+}
+/*日记end*/
+
+
+/*文章面包屑导航*/
+.bread{
+	padding:.1rem;
+	font-size:14px;
+}
+.bread a{
+	color:#0072E4;
+}
+/*文章面包屑导航end*/
+/*文章*/
+.intro{
+	border-radius:10px;
+	background:#cacaca;
+	padding:.2rem;
+	margin:.3rem 0 .4rem 0;
+}
+/*文章end*/
+
+/* bootstrap分页 */
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: .4rem 0;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: .1rem .2rem;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #337ab7;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  margin-left: -1px;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  z-index: 2;
+  color: #23527c;
+  background-color: #eeeeee;
+  border-color: #dddddd;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  z-index: 3;
+  color: #ffffff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+  cursor: default;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #777777;
+  background-color: #ffffff;
+  border-color: #dddddd;
+  cursor: not-allowed;
+}
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+  padding: .2rem .3rem;
+  font-size: 16px;
+  line-height: 1.3333333;
+}
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+  padding: .1rem .2rem;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.pager {
+  padding-left: 0;
+  margin: .4rem 0;
+  list-style: none;
+  text-align: center;
+}
+.pager li {
+  display: inline;
+}
+.pager li > a,
+.pager li > span {
+  display: inline-block;
+  padding: .1rem .3rem;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+}
+.pager li > a:hover,
+.pager li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+.pager .next > a,
+.pager .next > span {
+  float: right;
+}
+.pager .previous > a,
+.pager .previous > span {
+  float: left;
+}
+.pager .disabled > a,
+.pager .disabled > a:hover,
+.pager .disabled > a:focus,
+.pager .disabled > span {
+  color: #777777;
+  background-color: #ffffff;
+  cursor: not-allowed;
+}
+.clearfix:before,
+.clearfix:after,
+.pager:before,
+.pager:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after,
+.pager:after {
+  clear: both;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.hidden {
+  display: none !important;
+}
+.affix {
+  position: fixed;
+}
+
+/* bootstrap分页end */
+
+
+/*手机版日历全部隐藏*/
+.date{
+	display:none;
+}
+/*手机版日历全部隐藏end*/
+
+
+/*文字大小适配*/
+@media screen and (min-width: 400px) and (max-width: 700px) {
+	body{
+		font-size:14px;
+	}
+	.list h2,.today h2{
+		font-size:18px;
+	}
+	.bread{
+		font-size:16px;
+	}
+	.article h2{
+		font-size:20px;
+	}
+	.name{
+		font-size:20px;
+	}
+}
+@media screen and (min-width: 700px){
+	body{
+		font-size:20px;
+	}
+	.name{
+		font-size:30px;
+	}
+	.list h2,.today h2{
+		font-size:26px;
+	}
+	.pagination{
+		font-size:16px;
+	}
+	.bread{
+		font-size:22px;
+	}
+	.article{
+		font-size:20px;
+	}
+	.article h2{
+		font-size:36px;
+	}
+}

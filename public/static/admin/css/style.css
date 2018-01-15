@@ -1,0 +1,172 @@
+﻿/*公共头部样式*/
+.header{
+	position:relative;
+	background:#0e5a8f;
+	width:100%;
+	height:80px;
+	z-index:99;
+	text-align:center;
+	font-size:20px;
+	color:white;
+}
+.logo{
+	position:relative;
+	float:left;
+	z-index:999;
+	margin-top:10px;
+}
+.logo img{
+	float:left;
+	width:60px;
+	border-radius: 50%;
+}
+.logo h1{
+	float:left;
+	color:white;
+	font-size:20px;
+	padding-left:10px;
+}
+.admin{
+	float:right;
+	font-size:24px;
+	color:white;
+	padding:20px 30px;
+}
+.Expiredreminder{
+	position:absolute;
+	left:0;
+	width:100%;
+	height:80px;
+	line-height:80px;
+}
+/*公共头部样式end*/
+/*首页样式*/
+.data1 .panel-body{
+	text-align:center;
+	font-size:20px;
+}
+/*首页样式end*/
+/*公共列表样式*/
+.list{
+	position:fixed;
+	top:0;
+	bottom:0;
+	width:300px;
+	background:#f4f4f4;
+	box-shadow:1px 1px 1px rgba(0, 0, 0, 0.07);
+}
+.list .logo{
+	background:#0e5a8f;
+	width:100%;
+	height:80px;
+	margin:0;
+}
+.list .logo a{
+	margin:10px 20px
+}
+.list .tree{
+	margin-top:80px;
+}
+.list ul{
+	padding:0;
+	border-bottom:1px solid #fff;
+}
+.list .tree-view{
+	border-top:1px solid #fff;
+	border-bottom:1px solid #dbdbdb;
+	line-height:50px;
+}
+.list .tree-view>a{
+	width:100%;
+	padding:0 40px;
+	color:#222;
+}
+.list .tree-menu{
+	display:none;
+}
+.list .tree-menu a{
+	width:100%;
+	padding-left:80px;
+	background:url('../images/child.png') no-repeat 60px center;
+	color:#777;
+}
+.list .tree-view a:hover{
+	color:#222;
+}
+.list .tree-view>a.inactive{
+	background:url('../images/jiantou.png') no-repeat 200px center;
+}
+.list .tree-view >a.active{
+	background:url('../images/active.png') no-repeat 200px center;
+}
+.list>ul>li.active{
+	background:#f9f9f9;
+}
+.list .tree-menu a.active{
+	color:#222;
+}
+/*公共列表样式end*/
+/*公共主体样式*/
+.content{
+	margin-top:20px;
+	margin-left:300px;
+}
+table{
+	vertical-align:middle;
+	margin-top:20px;
+}
+/*公共主体样式end*/
+/*work页面样式*/
+.person,.work{
+	position: static;
+}
+.work .time{
+	display: inline-block;
+	width: 48%;
+}
+.person .form-group,.work .form-group{
+	position:relative;
+}
+#addWork{
+	color:white;
+	float:right
+}
+.delWork{
+	float:right;
+}
+#save{
+	margin:0 0 10px 10px;
+}
+.panel-body .num{
+	font-size:20px;
+}
+/*work页面样式end*/
+/*article首页样式*/
+.add{
+	margin-bottom:20px;
+}
+#article_result .form-group{
+	margin-bottom:20px;
+}
+/*article首页样式end*/
+/*flash幻灯片页面样式*/
+.flash-img{
+	max-width:90%;
+	max-height: 120px;
+	margin:0 auto;
+}
+.flash-table{
+	margin-top:0;
+	width:100%;
+}
+.flash-table tr th{
+	font-weight:bold;
+	text-align:center;
+}
+.flash-table tr td{
+	padding:8px 0;
+}
+.add-flash{
+	margin:10px;
+}
+/*flash幻灯片页面样式end

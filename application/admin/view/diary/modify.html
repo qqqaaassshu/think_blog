@@ -1,0 +1,25 @@
+
+	<div class="container-fluid content">
+		<div class="article">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					新增日记
+				</div>
+				<div class="panel-body">
+					<form id="modify-diary" method="post" enctype="multipart/form-data">
+					  <input type="hidden" id="diaryId" value="{$diary.id}">
+					  <div class="form-group">
+					    <label for="title">标题</label>
+					    <input type="text" name="title" class="form-control" id="title" minlength="1" maxlength="7" required value="{$diary.title}">
+					  </div>
+					  <div class="form-group">
+					   <label for="content">内容</label>
+					    <textarea class="form-control" name="content" rows="5">{$diary.content}</textarea>
+					  </div>
+					  <button class="btn btn-default">修改</button>
+					  <span style="display:none" id="info" class="text-warning"></span>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
