@@ -1,0 +1,51 @@
+[ 2018-01-15T09:47:38+08:00 ] ::1 ::1 GET /
+[ log ] localhost/ [运行时间：9.447540s][吞吐率：0.11req/s] [内存消耗：3,098.60kb] [文件加载：52]
+[ info ] [ LANG ] D:\wamp\www\thinkblog\thinkBlog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp\www\thinkblog\thinkBlog\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp\www\thinkblog\thinkBlog\public/../application/index\view\index\index.html [ array (
+  0 => 'diary',
+  1 => 'Hlist',
+  2 => 'system',
+  3 => 'person',
+  4 => 'list',
+  5 => 'js',
+  6 => 'css',
+  7 => 'Pcss',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.701097s ] mysql:dbname=thinkblog;host=thinkblog.cte75ncmnmww.us-east-2.rds.amazonaws.com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_flash` [ RunTime:0.628036s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_flash` WHERE  `type` = 1 ORDER BY `order`  asc [ RunTime:0.591034s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_person` [ RunTime:0.622036s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_person` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.628036s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_system` [ RunTime:0.591034s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.614035s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_diary` [ RunTime:0.622036s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `blog_diary` LIMIT 1 [ RunTime:0.595034s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_diary` ORDER BY `id`  desc LIMIT 1 [ RunTime:0.623036s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.608035s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `blog_article` WHERE  `status` = '1' LIMIT 1 [ RunTime:0.611035s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_article` WHERE  `status` = '1' ORDER BY `create_time`  desc LIMIT 0,5 [ RunTime:0.893052s ]
+
+---------------------------------------------------------------
