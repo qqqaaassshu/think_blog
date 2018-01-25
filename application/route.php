@@ -37,6 +37,5 @@ return [
     'index/article/[:id]'=>'index/article/index',
     'index/person'=>'index/person/index',
     'index/test'=>'index/test/PseudoClasses',
-    'index/vuestudy/index'=>'index/vuestudy/index',
     'index/[:type]'=>'index/index/index'
 ];
